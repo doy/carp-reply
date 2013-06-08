@@ -17,7 +17,7 @@ sub repl {
         config  => Reply::Config->new,
         plugins => ['CarpReply']
     );
-    $repl->run_one('#bt');
+    $repl->step('#bt');
     $repl->run;
 }
 
