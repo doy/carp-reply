@@ -91,7 +91,7 @@ sub import {
     $SIG{__DIE__} = sub { print $_[0]; repl() };
 }
 
-=function repl
+=func repl
 
 Invokes a repl at the current point of execution.
 
