@@ -6,6 +6,22 @@ use base 'Reply::Plugin';
 
 use Devel::StackTrace::WithLexicals;
 
+=head1 SYNOPSIS
+
+  Reply->new(plugins => ['CarpReply'])->run;
+
+=head1 DESCRIPTION
+
+This plugin implements the L<Reply> shell commands to support L<Carp::Reply>'s
+behavior. It currently isn't incredibly useful on its own as part of a config
+file, but can be useful if you want more control over creating a
+Carp::Reply-like shell.
+
+See the L<Carp::Reply> docs for a description of the commands provided by this
+plugin.
+
+=cut
+
 sub new {
     my $class = shift;
 
