@@ -163,4 +163,6 @@ sub _frame {
 
 =end Pod::Coverage
 
+=cut
+
 1;
