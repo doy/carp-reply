@@ -143,4 +143,23 @@ sub _frame {
     return $self->{stacktrace}->frame($self->{frame_index});
 }
 
+=begin Pod::Coverage
+
+  command_backtrace
+  command_trace
+  command_bt
+  command_top
+  command_t
+  command_bottom
+  command_b
+  command_up
+  command_u
+  command_down
+  command_d
+  command_list
+  command_l
+  command_env
+
+=end Pod::Coverage
+
 1;
