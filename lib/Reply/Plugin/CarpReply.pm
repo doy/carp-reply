@@ -1,6 +1,7 @@
 package Reply::Plugin::CarpReply;
 use strict;
 use warnings;
+# ABSTRACT: plugin that implements most of the functionality of Carp::Reply
 
 use base 'Reply::Plugin';
 
