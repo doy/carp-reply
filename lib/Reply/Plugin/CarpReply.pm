@@ -40,6 +40,7 @@ sub compile {
     my ($next, $line, %opts) = @_;
 
     $opts{environment} = $self->_frame->lexicals;
+    $opts{package}     = $self->_frame->package;
 
     return $next->($line, %opts);
 }

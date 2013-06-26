@@ -3,7 +3,7 @@ use strict;
 use warnings;
 # ABSTRACT: get a repl on exceptions in your program
 
-use Reply;
+use Reply 0.13;
 use Reply::Config;
 
 =head1 SYNOPSIS
