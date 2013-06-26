@@ -27,9 +27,9 @@ introspect the current state of the program, including the call stack and
 current lexical variables. It works just like L<Reply>, with the addition of
 some commands to move around in the call stack.
 
-The lexical environment is set to the lexical environment of the current stack
-frame (and is updated when you use any of the commands which move around the
-stack frames).
+The package and lexical environment are set to the package and lexical
+environment of the current stack frame (and are updated when you use any of the
+commands which move around the stack frames).
 
 Carp::Reply also installs a C<__DIE__> handler which automatically launches a
 repl when an exception is thrown. You can suppress this behavior by passing an
