@@ -31,9 +31,16 @@ The package and lexical environment are set to the package and lexical
 environment of the current stack frame (and are updated when you use any of the
 commands which move around the stack frames).
 
-Carp::Reply also installs a C<__DIE__> handler which automatically launches a
+You can start a repl at any given point in your program by inserting a call to
+C<Carp::Reply::repl> in your code. In addition, the default C<import> method
+for C<Carp::Reply> installs a C<__DIE__> handler which automatically launches a
 repl when an exception is thrown. You can suppress this behavior by passing an
 empty import list, either via C<use Carp::Reply ();> or C<perl -mCarp::Reply>.
+
+If the repl was invoked manually (via calling C<repl>), you can resume
+execution of your code by exiting the repl, typically via C<Ctrl+D>. If it was
+invoked via the C<__DIE__> handler, there is no way to resume execution (this
+is a limitation of perl itself).
 
 =head1 COMMANDS
 
