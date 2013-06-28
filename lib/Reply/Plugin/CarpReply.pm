@@ -30,19 +30,9 @@ sub new {
     $self->{stacktrace} = Devel::StackTrace::WithLexicals->new(
         ignore_class => ['Reply', 'Carp::Reply', __PACKAGE__],
     );
-    $self->{frame_index} = 0;
+    $self->_frame_index(0);
 
     return $self;
-}
-
-sub compile {
-    my $self = shift;
-    my ($next, $line, %opts) = @_;
-
-    $opts{environment} = $self->_frame->lexicals;
-    $opts{package}     = $self->_frame->package;
-
-    return $next->($line, %opts);
 }
 
 sub command_backtrace {
@@ -137,6 +127,12 @@ sub _frame_index {
         printf "Now at %s:%s (frame $index)\n",
             $self->_frame->filename,
             $self->_frame->line;
+
+        $self->publish(
+            'lexical_environment',
+            default => $self->_frame->lexicals
+        );
+        $self->publish('package', $self->_frame->package);
     }
 }
 
