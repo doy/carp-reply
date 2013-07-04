@@ -1,6 +1,8 @@
 Revision history for Carp-Reply
 
 {{$NEXT}}
+
+0.06  2013-07-04
       - update to work with new reply
       - modifications to existing lexical variables in a stack frame now
         persist if the program continues running
