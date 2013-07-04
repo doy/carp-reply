@@ -35,6 +35,17 @@ sub new {
     return $self;
 }
 
+sub compile {
+    my $self = shift;
+    my ($next, $line, %args) = @_;
+
+    $self->_frame_index($self->{frame_index});
+
+    my ($code) = $next->($line, %args);
+
+    return $code;
+}
+
 sub command_backtrace {
     my $self = shift;
     print "Backtrace:\n";
