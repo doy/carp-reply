@@ -134,14 +134,16 @@ sub _frame_index {
         print "You're already at the top frame.\n";
     }
     else {
-        $self->{frame_index} = $index;
-        printf "Now at %s:%s (frame $index)\n",
-            $self->_frame->filename,
-            $self->_frame->line;
+        if (!defined $self->{frame_index} || $self->{frame_index} != $index) {
+            $self->{frame_index} = $index;
+            printf "Now at %s:%s (frame $index)\n",
+                $self->_frame->filename,
+                $self->_frame->line;
+        }
 
         $self->publish(
             'lexical_environment',
-            default => $self->_frame->lexicals
+            $self->_frame->lexicals
         );
         $self->publish('package', $self->_frame->package);
     }
