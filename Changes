@@ -1,6 +1,11 @@
 Revision history for Carp-Reply
 
 {{$NEXT}}
+      - update to work with new reply
+      - modifications to existing lexical variables in a stack frame now
+        persist if the program continues running
+      - lexical variables declared in the repl are now persisted (assuming
+        LexicalPersistence is enabled)
 
 0.05  2013-06-27
       - update to work with new reply
