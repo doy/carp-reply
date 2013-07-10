@@ -35,17 +35,6 @@ sub new {
     return $self;
 }
 
-sub compile {
-    my $self = shift;
-    my ($next, $line, %args) = @_;
-
-    $self->_frame_index($self->{frame_index});
-
-    my ($code) = $next->($line, %args);
-
-    return $code;
-}
-
 sub command_backtrace {
     my $self = shift;
     print "Backtrace:\n";
@@ -123,6 +112,16 @@ sub command_u     { shift->command_up(@_)        }
 sub command_d     { shift->command_down(@_)      }
 sub command_l     { shift->command_list(@_)      }
 
+sub lexical_environment {
+    my $self = shift;
+    return $self->_frame->lexicals;
+}
+
+sub package {
+    my $self = shift;
+    return $self->_frame->package;
+}
+
 sub _frame_index {
     my $self = shift;
     my ($index) = @_;
@@ -140,12 +139,6 @@ sub _frame_index {
                 $self->_frame->filename,
                 $self->_frame->line;
         }
-
-        $self->publish(
-            'lexical_environment',
-            $self->_frame->lexicals
-        );
-        $self->publish('package', $self->_frame->package);
     }
 }
 
