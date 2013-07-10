@@ -122,7 +122,7 @@ No known bugs.
 
 Please report any bugs through RT: email
 C<bug-carp-reply at rt.cpan.org>, or browse to
-L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Reply>.
+L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Carp-Reply>.
 
 =head1 SEE ALSO
 
