@@ -108,11 +108,12 @@ Invokes a repl at the current point of execution.
 =cut
 
 sub repl {
+    my ($quiet) = @_;
     my $repl = Reply->new(
         config  => Reply::Config->new,
         plugins => ['CarpReply']
     );
-    $repl->step('#bt');
+    $repl->step('#bt') unless $quiet;
     $repl->run;
 }
 
