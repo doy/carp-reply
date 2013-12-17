@@ -1,6 +1,8 @@
 Revision history for Carp-Reply
 
 {{$NEXT}}
+
+0.08  2013-12-17
       - allow suppressing the initial stacktrace when invoking the repl
         manually
 
