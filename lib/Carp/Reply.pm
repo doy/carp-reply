@@ -120,9 +120,8 @@ sub repl {
 
 No known bugs.
 
-Please report any bugs through RT: email
-C<bug-carp-reply at rt.cpan.org>, or browse to
-L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Carp-Reply>.
+Please report any bugs to GitHub Issues at
+L<https://github.com/doy/carp-reply/issues>.
 
 =head1 SEE ALSO
 
@@ -142,13 +141,13 @@ You can also look for information at:
 
 L<https://metacpan.org/release/Carp-Reply>
 
-=item * RT: CPAN's request tracker
-
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Carp-Reply>
-
 =item * Github
 
 L<https://github.com/doy/carp-reply>
+
+=item * RT: CPAN's request tracker
+
+L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Carp-Reply>
 
 =item * CPAN Ratings
 
